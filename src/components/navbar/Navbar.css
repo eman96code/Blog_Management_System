@@ -1,0 +1,25 @@
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2px;
+}
+nav ul li {
+  margin: 0;
+  flex-grow: 1;
+}
+nav ul li a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  background-color: #f0ebeb;
+}
+nav ul li .active_link {
+  background-color: #becabf;
+  transition-duration: 0.5s;
+  color: white;
+  font-weight: bold;
+}
