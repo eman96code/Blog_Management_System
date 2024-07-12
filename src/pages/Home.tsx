@@ -1,8 +1,10 @@
+import Paginator from "@/components/ui/Paginator";
+
 // interface Props {}
 const Home = () => {
   return (
     <header>
-      <div className="bg-background min-h-screen">
+      <div className="min-h-screen bg-background">
         <div className="relative">
           <img
             src="https://placehold.co/800x400"
@@ -10,8 +12,8 @@ const Home = () => {
             className="h-96 w-full object-cover"
           />
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-card text-card-foreground max-w-lg rounded-lg p-6">
-              <span className="bg-primary text-primary-foreground rounded px-2 py-1">
+            <div className="max-w-lg rounded-lg bg-card p-6 text-card-foreground">
+              <span className="rounded bg-primary px-2 py-1 text-primary-foreground">
                 Technology
               </span>
               <h1 className="mt-4 text-2xl font-bold">
@@ -32,6 +34,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <Paginator />
       </div>
     </header>
   );

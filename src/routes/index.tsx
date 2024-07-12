@@ -24,7 +24,7 @@ const router = createBrowserRouter(
         <Route
           path="dashboard"
           element={
-            <PrivateRoute redirectPath="/Login" isAuthenticated>
+            <PrivateRoute redirectPath="/Login" isAuthenticated={false}>
               <Dashboard />
             </PrivateRoute>
           }
