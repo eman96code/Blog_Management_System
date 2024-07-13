@@ -1,19 +1,25 @@
-// interface PaginatorProps {}
-const Paginator = () => {
+interface PaginatorProps {
+  page: number;
+  lastPage: number;
+  total: number;
+}
+const Paginator = ({page,lastPage,total}: PaginatorProps) => {
   return (
     <>
       <div className="flex flex-col items-center">
         {/* Help text */}
         <span className="text-sm text-gray-700 dark:text-gray-400">
           Showing{" "}
-          <span className="font-semibold text-gray-900 dark:text-white">1</span>{" "}
+          <span className="font-semibold text-gray-900 dark:text-white">
+            {page}
+          </span>{" "}
           to{" "}
           <span className="font-semibold text-gray-900 dark:text-white">
-            10
+            {lastPage}
           </span>{" "}
           of{" "}
           <span className="font-semibold text-gray-900 dark:text-white">
-            100
+            {total}
           </span>{" "}
           Entries
         </span>
