@@ -3,7 +3,13 @@ interface Blog {
   attributes: {
     title: string;
     description: string;
-    imgUrl: string;
+    imgUrl: {
+      data: {
+        attributes: {
+          url: string;
+        };
+      };
+    };
     tags?: string[];
   };
 }

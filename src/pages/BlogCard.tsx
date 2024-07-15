@@ -9,7 +9,7 @@ const BlogCard = ({
     <>
       <div className="mx-auto max-w-xs overflow-hidden rounded-lg bg-card text-card-foreground shadow-md">
         <Image
-          src={imgUrl}
+          src={imgUrl?.data?.attributes?.url}
           alt="abstract painting of a sunset"
           className="h-48 w-full object-cover"
         />

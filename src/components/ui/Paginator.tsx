@@ -2,8 +2,16 @@ interface PaginatorProps {
   page: number;
   lastPage: number;
   total: number;
+  onPrev: () => void;
+  onNext: () => void;
 }
-const Paginator = ({page,lastPage,total}: PaginatorProps) => {
+const Paginator = ({
+  page,
+  lastPage,
+  total,
+  onPrev,
+  onNext,
+}: PaginatorProps) => {
   return (
     <>
       <div className="flex flex-col items-center">
@@ -25,7 +33,11 @@ const Paginator = ({page,lastPage,total}: PaginatorProps) => {
         </span>
         <div className="xs:mt-0 mt-2 inline-flex">
           {/* Buttons */}
-          <button className="flex h-8 items-center justify-center rounded-s bg-gray-800 px-3 text-sm font-medium text-white hover:bg-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+          <button
+            className="flex h-8 items-center justify-center rounded-s bg-gray-800 px-3 text-sm font-medium text-white hover:bg-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            onClick={onPrev}
+            disabled={page === 1}
+          >
             <svg
               className="me-2 h-3.5 w-3.5 rtl:rotate-180"
               aria-hidden="true"
@@ -43,7 +55,11 @@ const Paginator = ({page,lastPage,total}: PaginatorProps) => {
             </svg>
             Prev
           </button>
-          <button className="flex h-8 items-center justify-center rounded-e border-0 border-s border-gray-700 bg-gray-800 px-3 text-sm font-medium text-white hover:bg-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+          <button
+            className="flex h-8 items-center justify-center rounded-e border-0 border-s border-gray-700 bg-gray-800 px-3 text-sm font-medium text-white hover:bg-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            onClick={onNext}
+            disabled={page === lastPage}
+          >
             Next
             <svg
               className="ms-2 h-3.5 w-3.5 rtl:rotate-180"
